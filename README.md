@@ -4,7 +4,7 @@
 This R package contains the resources for performing the drug utilization study of Ranitidine.
 
 ## Results
-The results of the Ranitidine report for the European Medicine Agency are presented in the interactive shiny application  [HERE](https://mi-erasmusmc.shinyapps.io/ResultsExplorer/).
+The results of the Ranitidine performed on European datasets are presented in the interactive shiny application  [HERE](https://mi-erasmusmc.shinyapps.io/ResultsExplorer/).
 
 ## Installation 
 1. On Windows, make sure [RTools](http://cran.r-project.org/bin/windows/Rtools/) is installed.

@@ -74,5 +74,5 @@ The `addIndex` setting can be used for database management systems that allow fo
 
 The package provides functions to perform unit tests against a blank CDM. The unit test framework assumes you have established an empty CDM and have populated the vocabulary tables. Additionally, it is highly recommended to index the vocabulary tables when executing the unit tests.
 
-For more information see the [unitTesting_README.md file](https://github.com/mi-erasmusmc/RanitidineStudy/unitTesting_README.md).
+For more information see the [unitTesting_README.md file](https://github.com/mi-erasmusmc/RanitidineStudy/blob/master/unitTesting_README.md).
 

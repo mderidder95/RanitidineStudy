@@ -1,0 +1,14 @@
+atlasId,atlasName,cohortId,name
+275,Ranitidine first exposure no lookback,1,Ranitidine
+276,Cimetidine first exposure no lookback,2,Cimetidine
+277,Famotidine first exposure no lookback,3,Famotidine
+278,Nizatidine first exposure no lookback,4,Nizatidine
+279,Roxatidine first exposure no lookback,5,Roxatidine
+280,Ranitidine bismuth citrate first exposure no lookback,6,Ranitidine bismuth citrate
+281,Lafutidine first exposure no lookback,7,Lafutidine
+297,Niperotidine first exposure no lookback,8,Niperotidine
+299,H2 inhibitors first exposure no lookback,9,H2 Class
+282,GERD,10,GERD
+283,Zollinger Ellison Syndrome,11,Zollinger Ellison Syndrome
+284,Gastric Or Duodenal Ulcer,12,Gastric Or Duodenal Ulcer
+286,Chronic Renal Impairment,13,Chronic Renal Impairment

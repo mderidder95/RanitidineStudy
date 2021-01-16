@@ -1,5 +1,5 @@
 # Ranitidine Drug Utilization Study
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4444771.svg)](https://doi.org/10.5281/zenodo.4444771)
 ## Introduction
 This R package contains the resources for performing the drug utilization study of Ranitidine and other H2-receptor antagonists as described in detail in the protocol as registered at ENCePP website under registration number [EUPAS33397](http://www.encepp.eu/encepp/viewResource.htm?id=33398).
 

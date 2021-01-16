@@ -1,7 +1,7 @@
 Package: DrugUtilization
 Type: Package
 Title: Ranitidine drug utilization study generating statistics against the OMOP CDM
-Version: 0.0.1
+Version: 1.0.0
 Date: 2019-12-13
 Authors@R: c(
   person("Anthony", "Sena", , "asena5@its.jnj.com", role = c("aut", "cre"))

@@ -68,7 +68,8 @@ writeToCsv <- function(data, fileName) {
 # From Main.R, line 108-133
 
 packageName = "DrugUtilization"
-# Load created cohorts
+# ---------------------------------------------------------------------
+# Load created cohorts from package
 pathToCsv <- system.file("settings", "CohortsToCreate.csv", package = packageName)
 cohorts <- readr::read_csv(pathToCsv, col_types = readr::cols())
 cohorts$atlasId <- NULL
@@ -115,7 +116,7 @@ querySql(conn,"select cohort_definition_id, count(*) from mr_spec group by cohor
 
 # Load created cohorts
 # Now the cohorts to create must be read from the study folder, not the package folder
-pathLocal<- "D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/"
+pathLocal<- "D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHubDataFolder/"
 pathToCsv<- paste0(pathLocal, "inst/settings/CohortsToCreate.csv")
 cohorts <- readr::read_csv(pathToCsv, col_types = readr::cols())
 cohorts$atlasId <- NULL
@@ -133,21 +134,15 @@ getSql <- function(name) {
   sql <- readChar(pathToSql, file.info(pathToSql)$size)
   return(sql)
 }
-cohorts$sql <- sapply(cohorts$name, getSql)
+cohorts$sql <- sapply(cohorts$cohortName, getSql)
 getJson <- function(name) {
   pathToJson <- paste0(pathLocal,"inst/cohorts/", paste0(name, ".json"))
   json <- readChar(pathToJson, file.info(pathToJson)$size)
   return(json)
 }
-cohorts$json <- sapply(cohorts$name, getJson)
+cohorts$json <- sapply(cohorts$cohortName, getJson)
 
-#### TOT HIER
-
-
-
-
-
-cohortTable <- "MR_spec_Local"
+cohortTable <- "MR_spec_local"
 
 DrugUtilization::createCohorts(connection = conn,
                                connectionDetails = connectionDetails,
@@ -158,8 +153,16 @@ DrugUtilization::createCohorts(connection = conn,
                                oracleTempSchema = oracleTempSchema,
                                outputFolder = outputFolder)
 
+querySql(conn,"select cohort_definition_id, count(*) from mr_spec_local group by cohort_definition_id;")
 
+# Werkt! Maar: omdat ik wijzigingen had aangebracht in CreateCohorts.R, daarna opnieuw gebuild.
+# De MR Gastric files maken nu ook deel uit van het pakket.
+# Een poging zonder:
 
+# MR Gastric.sql en .json weggehaald uit pakket.
+# Regel in CohortsToCreate.csv daar er wer uitgehaald.
+# De inst folder van RantidineStudyGitHub gekopieerd naar RantidineStudyGitHubDataFolder
+# In RantidineStudyGitHub inst folder de MR Gastric specifieke zaken weer weggehaald
 
 
 

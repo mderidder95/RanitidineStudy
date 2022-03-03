@@ -5,6 +5,7 @@ library(readr)
 library(tidyr)
 library(ggiraph) #needed for shiny application?
 library(DatabaseConnector)
+library(DrugUtilization)
 
 #install.packages('ggiraph')
 
@@ -25,8 +26,6 @@ cdmDatabaseSchemaList <- 'main'
 cohortSchemaList <- 'main'
 databaseList <- 'Eunomia'
 outputFolder <-paste0(getwd(),"/output1")
-
-
 
 # ------------------------------------------------------------------------ 
 # Hard-coded settings
@@ -58,6 +57,14 @@ if (!file.exists(cohortDiagnosticsExportFolder))
 # ------------------------------------------------------------------------
 # Run DUSAnalysis  - this contains severla function definitions.
 
+# From DUSAnalusis, line 381
+
+writeToCsv <- function(data, fileName) {
+  colnames(data) <- SqlRender::camelCaseToSnakeCase(colnames(data))
+  # write.csv(data, fileName, row.names = FALSE)
+  readr::write_csv(data, fileName)
+}
+
 # From Main.R, line 108-133
 
 packageName = "DrugUtilization"
@@ -86,6 +93,83 @@ getJson <- function(name) {
   return(json)
 }
 cohorts$json <- sapply(cohorts$cohortName, getJson)
+
+# Running createCohorts on Eunomia, without any changes from the original package:
+
+DrugUtilization::createCohorts(connection = conn,
+                               connectionDetails = connectionDetails,
+                               cdmDatabaseSchema = "main",
+                               cohortDatabaseSchema = "main",
+                               cohortTable = cohortTable,
+                               addIndex = addIndex,
+                               oracleTempSchema = oracleTempSchema,
+                               outputFolder = outputFolder)
+
+querySql(conn,"select cohort_definition_id, count(*) from mr_spec group by cohort_definition_id;")
+# This results in cases only in cohort 12 Gastric Or Duodenal Ulcer: 802
+# Try to make the same cohort, but with different name, getting cohort settings from the local file.
+# In my RanitidineStudyGitHub folder, changed:
+# In inst/sql/sql_server: add MR Gastric.sql
+# In inst/cohorts: add MR Gastric.json
+# In inst/settings: add line in CohortsToCreate.csv: cohortId = 14, name = MR Gastric.
+
+# Load created cohorts
+# Now the cohorts to create must be read from the study folder, not the package folder
+pathLocal<- "D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/"
+pathToCsv<- paste0(pathLocal, "inst/settings/CohortsToCreate.csv")
+cohorts <- readr::read_csv(pathToCsv, col_types = readr::cols())
+cohorts$atlasId <- NULL
+
+cohortsOfInterest <- cohorts[cohorts$cohortId < 15, ]
+if ("atlasName" %in% colnames(cohorts)) {
+  cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "atlasName")
+} else {
+  cohorts <- dplyr::rename(cohorts, cohortName = "name", cohortFullName = "fullName")
+}
+writeToCsv(cohorts, file.path(outputFolder, "cohort.csv"))
+
+getSql <- function(name) {
+  pathToSql <-  paste0(pathLocal,"inst/sql/sql_server/", paste0(name, ".sql"))
+  sql <- readChar(pathToSql, file.info(pathToSql)$size)
+  return(sql)
+}
+cohorts$sql <- sapply(cohorts$name, getSql)
+getJson <- function(name) {
+  pathToJson <- paste0(pathLocal,"inst/cohorts/", paste0(name, ".json"))
+  json <- readChar(pathToJson, file.info(pathToJson)$size)
+  return(json)
+}
+cohorts$json <- sapply(cohorts$name, getJson)
+
+#### TOT HIER
+
+
+
+
+
+cohortTable <- "MR_spec_Local"
+
+DrugUtilization::createCohorts(connection = conn,
+                               connectionDetails = connectionDetails,
+                               cdmDatabaseSchema = "main",
+                               cohortDatabaseSchema = "main",
+                               cohortTable = cohortTable,
+                               addIndex = addIndex,
+                               oracleTempSchema = oracleTempSchema,
+                               outputFolder = outputFolder)
+
+
+
+
+
+
+
+
+
+
+
+############################################
+
 
 # Error in readChar(pathToJson, file.info(pathToJson)$size) : 
 #   invalid 'nchars' argument

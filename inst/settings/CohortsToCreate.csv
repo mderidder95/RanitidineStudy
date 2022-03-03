@@ -12,6 +12,7 @@ atlasId,atlasName,cohortId,name,fullName
 283,Zollinger Ellison Syndrome,11,Zollinger Ellison Syndrome,Zollinger Ellison Syndrome
 284,Gastric Or Duodenal Ulcer,12,Gastric Or Duodenal Ulcer,Gastric Or Duodenal Ulcer
 286,Chronic Renal Impairment,13,Chronic Renal Impairment,Chronic Renal Impairment
+999,MR Gastric,14,MR Gastric,MR Gastric
 290,Ranitidine incident use,21,Ranitidine incident use,Ranitidine incident use
 291,Cimetidine incident use,22,Cimetidine incident use,Cimetidine incident use
 292,Famotidine incident use,23,Famotidine incident use,Famotidine incident use

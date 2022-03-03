@@ -164,7 +164,15 @@ querySql(conn,"select cohort_definition_id, count(*) from mr_spec_local group by
 # De inst folder van RantidineStudyGitHub gekopieerd naar RantidineStudyGitHubDataFolder
 # In RantidineStudyGitHub inst folder de MR Gastric specifieke zaken weer weggehaald
 
-
+# Dit gebprobeerd, maar:
+# Error: Cannot find 'MR Gastric.sql' in the 'sql/sql_server' folder of the 'DrugUtilization' package.
+# Dit komt waarschijnlijk omdat in CreateCohorts.R staat:
+# sql <- loadRenderTranslateSql(connection = connection,
+#                              sqlFileInPackage = paste0(cohortsToCreate$name[i], ".sql"),
+#                               .......................
+# Dus de sqlFile moet in het package staan (??).
+# Dit lijkt standaard voor functie loadRenderTranslateSql.
+# Dus weer terug met alles in de project folder. Daar nu ook Celecoxib en NSAIDs toevoegen,
 
 
 

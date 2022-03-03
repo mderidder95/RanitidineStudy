@@ -1,24 +1,4 @@
 cohort_full_name,cohort_id,cohort_name,full_name
-Ranitidine first exposure no lookback,1,Ranitidine,Ranitidine first exposure no lookback
-Cimetidine first exposure no lookback,2,Cimetidine,Cimetidine first exposure no lookback
-Famotidine first exposure no lookback,3,Famotidine,Famotidine first exposure no lookback
-Nizatidine first exposure no lookback,4,Nizatidine,Nizatidine first exposure no lookback
-Roxatidine first exposure no lookback,5,Roxatidine,Roxatidine first exposure no lookback
-Ranitidine bismuth citrate first exposure no lookback,6,Ranitidine bismuth citrate,Ranitidine bismuth citrate first exposure no lookback
-Lafutidine first exposure no lookback,7,Lafutidine,Lafutidine first exposure no lookback
-Niperotidine first exposure no lookback,8,Niperotidine,Niperotidine first exposure no lookback
-H2 inhibitors first exposure no lookback,9,H2 Class,H2 inhibitors first exposure no lookback
-GERD,10,GERD,GERD
-Zollinger Ellison Syndrome,11,Zollinger Ellison Syndrome,Zollinger Ellison Syndrome
+Celecoxib,1,Celecoxib,Celecoxib
+Diclofenac,2,Diclofenac,Diclofenac
 Gastric Or Duodenal Ulcer,12,Gastric Or Duodenal Ulcer,Gastric Or Duodenal Ulcer
-Chronic Renal Impairment,13,Chronic Renal Impairment,Chronic Renal Impairment
-MR Gastric,14,MR Gastric,MR Gastric
-Ranitidine incident use,21,Ranitidine incident use,Ranitidine incident use
-Cimetidine incident use,22,Cimetidine incident use,Cimetidine incident use
-Famotidine incident use,23,Famotidine incident use,Famotidine incident use
-Nizatidine incident use,24,Nizatidine incident use,Nizatidine incident use
-Roxatidine incident use,25,Roxatidine incident use,Roxatidine incident use
-Ranitidine bismuth citrate incident use,26,Ranitidine bismuth citrate incident use,Ranitidine bismuth citrate incident use
-Lafutidine incident use,27,Lafutidine incident use,Lafutidine incident use
-Niperotidine incident use,28,Niperotidine incident use,Niperotidine incident use
-H2 inhibitors incident use,29,H2 inhibitors incident use,H2 inhibitors incident use

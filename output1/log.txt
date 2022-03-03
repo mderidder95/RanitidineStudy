@@ -1,0 +1,336 @@
+2022-03-03 16:32:17	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:32:17	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:32:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.208 secs 
+2022-03-03 16:32:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.396 secs 
+2022-03-03 16:32:19	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.349 secs 
+2022-03-03 16:32:19	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:32:19	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:32:19	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:32:19	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:32:19	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:33:38	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:33:38	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:33:38	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.238 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.238 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.349 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.349 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:33:39	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:33:39	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:33:39	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:33:39	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:33:40	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:33:40	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:33:40	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:33:40	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:33:40	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:33:40	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:33:59	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:33:59	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:33:59	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:33:59	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:33:59	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.936 secs 
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.936 secs 
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.936 secs 
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.381 secs 
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.381 secs 
+2022-03-03 16:34:01	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.381 secs 
+2022-03-03 16:34:02	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.176 secs 
+2022-03-03 16:34:02	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.176 secs 
+2022-03-03 16:34:02	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.176 secs 
+2022-03-03 16:34:02	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:34:02	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:34:02	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:34:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:34:03	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:34:03	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:34:03	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:34:03	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:34:03	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:34:03	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:35:39	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:35:39	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:35:39	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:35:39	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:35:39	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:35:39	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:35:39	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.63 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.63 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.63 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.63 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.46 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.46 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.46 secs 
+2022-03-03 16:35:40	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.46 secs 
+2022-03-03 16:35:41	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.362 secs 
+2022-03-03 16:35:41	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.362 secs 
+2022-03-03 16:35:41	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.362 secs 
+2022-03-03 16:35:41	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.362 secs 
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:35:41	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:35:41	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:35:41	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:35:41	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:35:41	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:35:41	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:35:41	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:35:41	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:35:41	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:39:30	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:39:30	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:39:30	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:39:30	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-03 16:39:30	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:39:30	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:39:30	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:39:30	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:39:30	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-03 16:39:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.23 secs 
+2022-03-03 16:39:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.23 secs 
+2022-03-03 16:39:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.23 secs 
+2022-03-03 16:39:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.23 secs 
+2022-03-03 16:39:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.23 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.348 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.348 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.348 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.348 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.348 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.358 secs 
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:39:32	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:39:32	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:39:32	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:39:32	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:39:32	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:39:32	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:39:32	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:39:32	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:39:32	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:39:32	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:39:32	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-03 16:42:15	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:42:15	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:42:15	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:42:15	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:42:15	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:42:15	[Main thread]	FATAL	DrugUtilization	dusAnalysis	object 'selfManageTempTables' not found
+2022-03-03 16:42:15	[Main thread]	FATAL	DrugUtilization	dusAnalysis	object 'selfManageTempTables' not found
+2022-03-03 16:42:15	[Main thread]	FATAL	DrugUtilization	dusAnalysis	object 'selfManageTempTables' not found
+2022-03-03 16:42:15	[Main thread]	FATAL	DrugUtilization	dusAnalysis	object 'selfManageTempTables' not found
+2022-03-03 16:42:15	[Main thread]	FATAL	DrugUtilization	dusAnalysis	object 'selfManageTempTables' not found
+2022-03-03 16:43:05	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:05	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:05	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:05	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:05	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:05	[Main thread]	FATAL	SqlRender	render	object 'vocabularyDatabaseSchema' not found
+2022-03-03 16:43:05	[Main thread]	FATAL	SqlRender	render	object 'vocabularyDatabaseSchema' not found
+2022-03-03 16:43:05	[Main thread]	FATAL	SqlRender	render	object 'vocabularyDatabaseSchema' not found
+2022-03-03 16:43:05	[Main thread]	FATAL	SqlRender	render	object 'vocabularyDatabaseSchema' not found
+2022-03-03 16:43:05	[Main thread]	FATAL	SqlRender	render	object 'vocabularyDatabaseSchema' not found
+2022-03-03 16:43:28	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:28	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:28	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:28	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:28	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:43:28	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:43:28	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:43:28	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:43:28	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:43:28	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected '=' in: "            cohortTable = cohortTable,             oracleTempSchema = ="
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected '=' in: "            cohortTable = cohortTable,             oracleTempSchema = ="
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected '=' in: "            cohortTable = cohortTable,             oracleTempSchema = ="
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected '=' in: "            cohortTable = cohortTable,             oracleTempSchema = ="
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected '=' in: "            cohortTable = cohortTable,             oracleTempSchema = ="
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debug = debug,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debug = debug,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debug = debug,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debug = debug,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debug = debug,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            outputFolder = outputFolder,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            outputFolder = outputFolder,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            outputFolder = outputFolder,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            outputFolder = outputFolder,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            outputFolder = outputFolder,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debugSqlFile = debugSqlFile,"
+2022-03-03 16:43:44	[Main thread]	FATAL			unexpected ',' in "            debugSqlFile = debugSqlFile,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            debugSqlFile = debugSqlFile,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            debugSqlFile = debugSqlFile,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            debugSqlFile = debugSqlFile,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseId = databaseId,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseId = databaseId,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseId = databaseId,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseId = databaseId,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseId = databaseId,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseName = databaseName,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseName = databaseName,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseName = databaseName,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseName = databaseName,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            databaseName = databaseName,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            addIndex = addIndex,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            addIndex = addIndex,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            addIndex = addIndex,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            addIndex = addIndex,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            addIndex = addIndex,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            selfManageTempTables = TRUE,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            selfManageTempTables = TRUE,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            selfManageTempTables = TRUE,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            selfManageTempTables = TRUE,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            selfManageTempTables = TRUE,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            vocabularyDatabaseSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            vocabularyDatabaseSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            vocabularyDatabaseSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            vocabularyDatabaseSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            vocabularyDatabaseSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmDrugExposureSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmDrugExposureSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmDrugExposureSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmDrugExposureSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmDrugExposureSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            drugExposureTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            drugExposureTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            drugExposureTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            drugExposureTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            drugExposureTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmObservationPeriodSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmObservationPeriodSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmObservationPeriodSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmObservationPeriodSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmObservationPeriodSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            observationPeriodTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            observationPeriodTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            observationPeriodTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            observationPeriodTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            observationPeriodTable,"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmPersonSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmPersonSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmPersonSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmPersonSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ',' in "            cdmPersonSchema= "main","
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ')' in "            personTable)"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ')' in "            personTable)"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ')' in "            personTable)"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ')' in "            personTable)"
+2022-03-03 16:43:45	[Main thread]	FATAL			unexpected ')' in "            personTable)"
+2022-03-03 16:44:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:44:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:44:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:44:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:44:03	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:44:04	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:44:04	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:44:04	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:44:04	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:44:04	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:48:29	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:48:29	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:48:29	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:48:29	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:48:29	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:48:29	[Main thread]	WARN	SqlRender	loadRenderTranslateSql	The 'oracleTempSchema' argument is deprecated. Use 'tempEmulationSchema' instead. [90mThis warning is displayed once every 8 hours.[39m
+2022-03-03 16:48:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:48:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:48:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:48:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:48:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:49:13	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:49:13	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:49:13	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:49:13	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:49:13	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:49:13	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:49:13	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:49:13	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:49:13	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:49:13	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-03 16:50:12	[Main thread]	FATAL			unused argument (tempEmulationSchema = "main")
+2022-03-03 16:50:12	[Main thread]	FATAL			unused argument (tempEmulationSchema = "main")
+2022-03-03 16:50:12	[Main thread]	FATAL			unused argument (tempEmulationSchema = "main")
+2022-03-03 16:50:12	[Main thread]	FATAL			unused argument (tempEmulationSchema = "main")
+2022-03-03 16:50:12	[Main thread]	FATAL			unused argument (tempEmulationSchema = "main")
+2022-03-03 16:52:00	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:52:00	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:52:00	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:52:00	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:52:00	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:52:01	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	object 'drugExposureTable' not found
+2022-03-03 16:52:01	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	object 'drugExposureTable' not found
+2022-03-03 16:52:01	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	object 'drugExposureTable' not found
+2022-03-03 16:52:01	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	object 'drugExposureTable' not found
+2022-03-03 16:52:01	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	object 'drugExposureTable' not found
+2022-03-03 16:53:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:53:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:53:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:53:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:53:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 16:53:25	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 16:53:25	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 16:53:25	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 16:53:25	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 16:53:25	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:05:07	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:05:07	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:05:07	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:05:07	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:05:07	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:05:07	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:05:07	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:05:07	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:05:07	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:05:07	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:06:30	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:06:30	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:06:30	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:06:30	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:06:30	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?

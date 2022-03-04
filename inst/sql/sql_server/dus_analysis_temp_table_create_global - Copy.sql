@@ -6,56 +6,124 @@ CREATE TABLE #COHORT_DDD_XREF (
 )
 ;
 
--- Celecoxib 
-
+-- Ranitidine excluding 400MG Ranitidine Bismuth Citrate 
 INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
-SELECT 1 as cohort_id, 800 ddd, 1118084 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+SELECT 1 as cohort_id, 300 ddd, 961047 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (1118084)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (961047)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (1118084)
+  and ca.ancestor_concept_id in (961047)
+  and c.invalid_reason is null
+
+) I
+LEFT JOIN
+(
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (19084587)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (19084587)
+  and c.invalid_reason is null
+
+) E ON I.concept_id = E.concept_id
+WHERE E.concept_id is null
+) C;
+
+-- Cimetidine
+INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
+SELECT 2 as cohort_id, 800 ddd, 997276 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+( 
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (997276)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (997276)
   and c.invalid_reason is null
 
 ) I
 ) C;
--- Diclofenac
+
+-- Famotidin 
 INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
-SELECT 2 as cohort_id, 40 ddd, 1124300 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+SELECT 3 as cohort_id, 40 ddd, 953076 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (1124300)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (953076)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (1124300)
+  and ca.ancestor_concept_id in (953076)
   and c.invalid_reason is null
 
 ) I
 ) C;
--- Acetaminophen 
 
+-- Nizatidine
 INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
-SELECT 3 as cohort_id, 800 ddd, 1127078 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+SELECT 4 as cohort_id, 300 ddd, 950696 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (1127078)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (950696)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (1127078)
+  and ca.ancestor_concept_id in (950696)
   and c.invalid_reason is null
 
 ) I
 ) C;
--- Asperin
+
+-- Roxatidine
 INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
-SELECT 4 as cohort_id, 40 ddd, 19059056 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+SELECT 5 as cohort_id, 150 ddd, 19011685 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (19059056)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (19011685)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (19059056)
+  and ca.ancestor_concept_id in (19011685)
+  and c.invalid_reason is null
+
+) I
+) C;
+
+-- Ranitidine bismuth citrate
+INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
+SELECT 6 as cohort_id, 800 ddd, 961047 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+( 
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (19084587)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (19084587)
+  and c.invalid_reason is null
+
+) I
+) C;
+
+-- Lafutidine
+INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
+SELECT 7 as cohort_id, 800 ddd, 43009003 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+( 
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (21600089,43009003)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (21600089,43009003)
+  and c.invalid_reason is null
+
+) I
+) C;
+
+-- Niperotidine
+INSERT INTO #COHORT_DDD_XREF (cohort_id, ddd, ingredient_concept_id, drug_concept_id)
+SELECT 8 as cohort_id, 0 ddd, 21600086 ingredient_concept_id, c.concept_id FROM (select distinct I.concept_id FROM
+( 
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (21600086)
+UNION  select c.concept_id
+  from @vocabulary_database_schema.CONCEPT c
+  join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
+  and ca.ancestor_concept_id in (21600086)
   and c.invalid_reason is null
 
 ) I
@@ -82,6 +150,7 @@ INTO #UNIT_CONCEPTS
 FROM drug_unit_concept_ids duci
 INNER JOIN @vocabulary_database_schema.concept c ON duci.unit_concept_id = c.concept_id
 ;
+
 
 -- Concepts in this table will be given priority
 -- when finding dose formualtion

@@ -17,8 +17,15 @@ conn<-connect(connectionDetails)
 
 Eunomia::createCohorts(connectionDetails = connectionDetails,cdmDatabaseSchema = 'main',cohortDatabaseSchema = 'main',cohortTable = 'cohort')
 # Celecoxib 1844 Diclofenac 850 GiBleed 479 NSAIDs 2694
-# sql created for 
-# Celecoxib: 1844 Diclofenac 850
+
+# Acetaminophen
+querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date from drug_exposure Where drug_concept_id = 1127078;")
+# Asperin
+querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date 
+         from drug_exposure Where drug_concept_id = 19059056;")
+
+               
+
 
 # To work with Eunomia:
 
@@ -105,27 +112,49 @@ DrugUtilization::createCohorts(connection = conn,
                                addIndex = addIndex,
                                oracleTempSchema = oracleTempSchema,
                                outputFolder = outputFolder)
+# This runs WITH the oracleTempSchema parameter.
 
 querySql(conn,"select cohort_definition_id, count(*) from mr_spec group by cohort_definition_id;")
-# Using total Eunomia: 1. Celecoxib: 1800, 2. Diclofenac: 830, 12 Gastric Or Duodenal Ulcer 802
+# Using total Eunomia: 1. Celecoxib: 1800, 2. Diclofenac: 830, 3. Ace.. 1428, 4. Aspirin 1927. 
+# 12 Gastric Or Duodenal Ulcer 802
 
 
+# From Helper.R, line 132
 loadRenderTranslateSql <- function(connection, sqlFileInPackage, oracleTempSchema, ...) {
   sql <- SqlRender::loadRenderTranslateSql(sqlFilename = sqlFileInPackage,
                                            packageName = "DrugUtilization",
                                            dbms = attr(connection, "dbms"),
                                            warnOnMissingParameters = TRUE,
-                                           #oracleTempSchema = oracleTempSchema,
+                                           oracleTempSchema = oracleTempSchema,
                                            ...)
   return (sql)
 }
+
+# Until tempCalendarYears, line 73
+# Does not run WITH oracleTempSchema parameter.
+# Neigther WITHOUT.
+# Error message about loadRenderTranslateSql, oracleTempSchema
+# Now it runs up to line 73, everywhere oracleTempSchema = oracleTempSchema,
+# Now with tempCalendarYears
+# In .getCalendarYearsSqlForCdm function definition, for calling loadRenderTranslateSql, oracleTempSchema was missing. Added.
+# Now up to line 97
+# Now up to line 119
+# Now up to line 169
+# Total! dusAnalysis function definition goes to line 210
+# It finished, but first all dus_h2 tables empty
+# Changes in dus_analysis_temp_table_creat_global.sql, install and restart
+# Part 'full class' needs to stay, because there temp.UNIT_CONCEPTS is created.
+# Now: dus_h2_temp_cohort 2630, but dus_h2_cohort 0
+# dus_h2_drug_exposure 5260, this is separate drugs and combined (ingredient 9)
+# line 244 in dus_analysis_creat_perm_cohort: FROM @cohort_database_schema.dus_h2_drug_exposure
+#       WHERE quantity > 0 AND (amount_unit_concept_id > 0 OR numerator_unit_concept_id > 0) # This is all 0 in rows.
 
 dusAnalysis(connection = conn,
             connectionDetails = connectionDetails,
             cdmDatabaseSchema = "main",
             cohortDatabaseSchema = "main",
             cohortTable = cohortTable,
-            #oracleTempSchema = oracleTempSchema,
+            oracleTempSchema = oracleTempSchema,
             debug = debug,
             outputFolder = outputFolder,
             debugSqlFile = debugSqlFile, 
@@ -142,6 +171,46 @@ dusAnalysis(connection = conn,
             personTable = "person")
 
 
+
+querySql(conn,"select count(*) from dus_h2_cohort;") # 0
+querySql(conn,"select count(*) from dus_h2_temp_cohort;") # 5985
+
+querySql(conn,"select count(*) from dus_h2_denominator;") # 0
+querySql(conn,"select count(*) from dus_h2_drug_exposure;") # 18336
+querySql(conn,"select ingredient, count(*) from dus_h2_drug_exposure group by ingredient;") # 18336
+querySql(conn,"select * from dus_h2_drug_exposure Where person_id > 10;") 
+
+querySql(conn,"select person_id, DRUG_CONCEPT_ID, drug_name, DRUG_EXPOSURE_START_DATE, DRUG_EXPOSURE_END_DATE, DURATION, QUANTITY
+         from dus_h2_drug_exposure Where DRUG_CONCEPT_ID = 19059056 and person_id < 10;") 
+
+querySql(conn,"select * from dus_h2_temp_cohort Where subject_id > 10;") # 2630
+
+querySql(conn,"select * from drug_exposure Where person_id < 4;")
+
+
+dusAnalysis(connection = conn,
+            connectionDetails = connectionDetails,
+            cdmDatabaseSchema = "main",
+            cohortDatabaseSchema = "main",
+            cohortTable = cohortTable,
+            oracleTempSchema = oracleTempSchema,
+            debug = debug,
+            outputFolder = outputFolder,
+            debugSqlFile = debugSqlFile, 
+            databaseId = databaseId,
+            databaseName = databaseName,
+            addIndex = addIndex,
+            selfManageTempTables = TRUE,
+            vocabularyDatabaseSchema= "main",
+            cdmDrugExposureSchema= "main",
+            drugExposureTable = "drug_exposure",
+            cdmObservationPeriodSchema= "main",
+            observationPeriodTable = "observation_period",
+            cdmPersonSchema= "main",
+            personTable = "person")
+
+#no such table: temp.UNIT_CONCEPTS
+# And no tables created.
 
 
 

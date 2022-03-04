@@ -242,7 +242,7 @@ INNER JOIN (
 LEFT JOIN (
   SELECT ingredient, person_id, dose_form_group_concept_id, COUNT(DISTINCT drug_exposure_id) total_exposures_with_strength
   FROM @cohort_database_schema.dus_h2_drug_exposure
-  WHERE quantity > 0 AND (amount_unit_concept_id > 0 OR numerator_unit_concept_id > 0)
+  WHERE quantity > -1 AND (amount_unit_concept_id > -1 OR numerator_unit_concept_id > -1)
   GROUP BY ingredient, person_id, dose_form_group_concept_id
 ) tews ON 
   tews.ingredient = c.cohort_definition_id 

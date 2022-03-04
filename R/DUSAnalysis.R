@@ -68,10 +68,13 @@ dusAnalysis <- function(connection = NULL,
     dfSql = rbind(dfSql, tempTableCreate, stringsAsFactors = FALSE)
   }
   
+
   tempCalendarYears <- .getCalendarYearsSqlForCdm(connection = connection,
                                                  cdmObservationPeriodSchema = cdmObservationPeriodSchema,
                                                  observationPeriodTable = observationPeriodTable,
-                                                 oracleTempSchema = oracleTempSchema)
+                                                 oracleTempSchema = oracleTempSchema                                           )
+
+  
   tempCalendarYears <- list(msg = "Creating calendary year temp table off observation_period",
                             sqlFile = tempCalendarYears$sqlFile,
                             sql = tempCalendarYears$sql)
@@ -89,7 +92,8 @@ dusAnalysis <- function(connection = NULL,
                                                    cohort_database_schema = cohortDatabaseSchema,
                                                    cohort_table = cohortTable))
   dfSql = rbind(dfSql, tempCohortTable, stringsAsFactors = FALSE)
-  
+
+
   sqlFile <- "dus_analysis_create_temp_drug_exposures.sql"
   tempDrugExposureTable <- list(msg = "Creating temp table with all drug exposures",
                                 sqlFile = sqlFile,
@@ -112,7 +116,8 @@ dusAnalysis <- function(connection = NULL,
                                                             cohort_database_schema = cohortDatabaseSchema,
                                                             add_index = addIndex))
   dfSql = rbind(dfSql, permDrugExposureTable, stringsAsFactors = FALSE)
-  
+
+
   sqlFile <- "dus_analysis_create_perm_cohort.sql"
   permCohortTable <- list(msg = "Creating dus_h2_cohort table",
                           sqlFile = sqlFile,
@@ -207,7 +212,7 @@ dusAnalysis <- function(connection = NULL,
 #' @export
 dusAnalysisCreateGlobalTempTables <- function(connection,
                                         vocabularyDatabaseSchema,
-                                        oracleTempSchema,
+                                        oracleTempSchema = oracleTempSchema,
                                         returnSql = FALSE) {
   
   sqlFile <- "dus_analysis_temp_table_create_global.sql"
@@ -229,7 +234,7 @@ dusAnalysisCreateGlobalTempTables <- function(connection,
 
 #' @export
 dusAnalysisDropGlobalTempTables <- function(connection,
-                                      oracleTempSchema,
+                                      oracleTempSchema= oracleTempSchema,
                                       returnSql = FALSE) {
   
   sqlFile <- "dus_analysis_temp_table_drop_global.sql"
@@ -250,11 +255,12 @@ dusAnalysisDropGlobalTempTables <- function(connection,
 .getCalendarYearsSqlForCdm <- function(connection,
                                        cdmObservationPeriodSchema,
                                        observationPeriodTable,
-                                       oracleTempSchema) {
+                                       oracleTempSchema= oracleTempSchema) {
   sqlFile <- "GetCalendarYearRange.sql"
   sql <- loadRenderTranslateSql(connection = connection,
                                 sqlFileInPackage = sqlFile,
                                 cdm_observation_period_schema = cdmObservationPeriodSchema,
+                                oracleTempSchema= oracleTempSchema,
                                 observation_period_table = observationPeriodTable)
   yearRange <- DatabaseConnector::querySql(connection, sql, snakeCaseToCamelCase = TRUE)
   calendarYears <- data.frame(calendarYear = seq(yearRange$startYear, yearRange$endYear, by = 1))
@@ -312,7 +318,7 @@ createAllTables <- function(connection = NULL,
   ParallelLogger::logInfo("Read Patient-Level Data")
   sql <- loadRenderTranslateSql(connection = connection,
                                 sqlFileInPackage = "PatientLevelData.sql",
-                                oracleTempSchema = oracleTempSchema,
+                                #oracleTempSchema = oracleTempSchema,
                                 cohort_database_schema = cohortDatabaseSchema)
   
   if (debug) {
@@ -336,7 +342,7 @@ createAllTables <- function(connection = NULL,
     ParallelLogger::logInfo("Gathering observation period histogram")
     sql <- loadRenderTranslateSql(connection = connection,
                                   sqlFileInPackage = "ObservationPeriod.sql",
-                                  oracleTempSchema = oracleTempSchema,
+                                  #oracleTempSchema = oracleTempSchema,
                                   cohort_database_schema = cohortDatabaseSchema)
     dataObsPeriod <-
       DatabaseConnector::querySql(connection, sql, snakeCaseToCamelCase = TRUE)
@@ -369,7 +375,7 @@ createAllTables <- function(connection = NULL,
 exportResults <- function(outputFolder,databaseId) {
   # Add all to zip file 
   ParallelLogger::logInfo("Adding results to zip file")
-  zipName <- file.path(outputFolder, paste0("Results_", databaseId, ".zip"))
+  zipName <- file.path(outputFolder, paste0("Results_", "CDM-L-20211025", ".zip"))
   files <- list.files(outputFolder, pattern = ".*\\.csv$")
   oldWd <- setwd(outputFolder)
   on.exit(setwd(oldWd))

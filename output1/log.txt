@@ -334,3 +334,111 @@
 2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
 2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
 2022-03-03 17:06:30	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	promise already under evaluation: recursive default argument reference or earlier problems?
+2022-03-04 13:41:23	[Main thread]	INFO	DrugUtilization	execute	Creating cohorts
+2022-03-04 13:41:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.323 secs 
+2022-03-04 13:41:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.395 secs 
+2022-03-04 13:41:24	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.339 secs 
+2022-03-04 13:41:24	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-04 13:41:25	[Main thread]	INFO	DrugUtilization	execute	Running Drug Utilization analyses
+2022-03-04 13:41:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data in database
+2022-03-04 13:41:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Create global temp tables (dus_analysis_temp_table_create_global.sql)
+2022-03-04 13:41:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0369 secs 
+2022-03-04 13:41:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Creating calendary year temp table off observation_period (GetCalendarYearRange.sql)
+2022-03-04 13:41:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.012 secs 
+2022-03-04 13:41:25	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Creating the temporary cohort table (dus_analysis_create_temp_cohort.sql)
+2022-03-04 13:41:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.298 secs 
+2022-03-04 13:41:26	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Creating temp table with all drug exposures (dus_analysis_create_temp_drug_exposures.sql)
+2022-03-04 13:41:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.351 secs 
+2022-03-04 13:41:26	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Creating dus_h2_drug_exposures table (dus_analysis_create_perm_drug_exposure.sql)
+2022-03-04 13:41:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0379 secs 
+2022-03-04 13:41:26	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Creating dus_h2_cohort table (dus_analysis_create_perm_cohort.sql)
+2022-03-04 13:41:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0578 secs 
+2022-03-04 13:41:26	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Computing incidence and prevalence (dus_analysis_compute_prev_inc.sql)
+2022-03-04 13:41:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 1.13 secs 
+2022-03-04 13:41:27	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Computing observation period histogram data (dus_analysis_observation_per_month.sql)
+2022-03-04 13:41:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 3.92 secs 
+2022-03-04 13:41:31	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Drop analysis temp tables (dus_analysis_temp_table_drop_analysis.sql)
+2022-03-04 13:41:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.016 secs 
+2022-03-04 13:41:31	[Main thread]	INFO	DrugUtilization	dusAnalysis	  - Drop global temp tables (dus_analysis_temp_table_drop_global.sql)
+2022-03-04 13:41:31	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.013 secs 
+2022-03-04 13:41:31	[Main thread]	INFO	DrugUtilization	dusAnalysis	Creating Patient-Level data took 6.45 secs
+2022-03-04 13:41:31	[Main thread]	INFO	DrugUtilization	execute	Creating All Tables
+2022-03-04 13:41:31	[Main thread]	INFO	DrugUtilization	createAllTables	Read Patient-Level Data
+2022-03-04 13:41:31	[Main thread]	FATAL	SqlRender	loadRenderTranslateSql	argument "oracleTempSchema" is missing, with no default
+2022-03-04 13:41:31	[Main thread]	WARN	DrugUtilization	execute	Could not find logger DEFAULT
+2022-03-04 14:17:36	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: no such table: drug_exposuret An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:30:09	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: table drug_exposure already exists An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:35:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.015 secs 
+2022-03-04 14:38:57	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: near "as": syntax error An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:39:22	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: near "select": syntax error An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:41:45	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.173 secs 
+2022-03-04 14:46:18	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.197 secs 
+2022-03-04 14:47:34	[Main thread]	INFO	DatabaseConnector	connect	Connecting using SQLite driver 
+2022-03-04 14:48:13	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0209 secs 
+2022-03-04 14:48:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.183 secs 
+2022-03-04 14:49:45	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: duplicate column name: end_date2 An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:49:52	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.016 secs 
+2022-03-04 14:51:11	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.165 secs 
+2022-03-04 14:56:05	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: incomplete input An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 14:58:56	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: incomplete input An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 15:32:07	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-04 15:33:13	[Main thread]	INFO			Creating Patient-Level data in database
+2022-03-04 15:33:14	[Main thread]	INFO			  - Create global temp tables (dus_analysis_temp_table_create_global.sql)
+2022-03-04 15:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.218 secs 
+2022-03-04 15:33:14	[Main thread]	INFO			  - Creating calendary year temp table off observation_period (GetCalendarYearRange.sql)
+2022-03-04 15:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.011 secs 
+2022-03-04 15:33:14	[Main thread]	INFO			  - Creating the temporary cohort table (dus_analysis_create_temp_cohort.sql)
+2022-03-04 15:33:14	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.337 secs 
+2022-03-04 15:33:14	[Main thread]	INFO			  - Creating temp table with all drug exposures (dus_analysis_create_temp_drug_exposures.sql)
+2022-03-04 15:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.415 secs 
+2022-03-04 15:33:15	[Main thread]	INFO			  - Creating dus_h2_drug_exposures table (dus_analysis_create_perm_drug_exposure.sql)
+2022-03-04 15:33:15	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0628 secs 
+2022-03-04 15:33:15	[Main thread]	INFO			  - Creating dus_h2_cohort table (dus_analysis_create_perm_cohort.sql)
+2022-03-04 15:33:15	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: near "temp": syntax error An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt
+2022-03-04 15:38:23	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-04 15:38:24	[Main thread]	INFO			Creating Patient-Level data in database
+2022-03-04 15:38:24	[Main thread]	INFO			  - Create global temp tables (dus_analysis_temp_table_create_global.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0459 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Creating calendary year temp table off observation_period (GetCalendarYearRange.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.009 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Creating the temporary cohort table (dus_analysis_create_temp_cohort.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.35 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Creating temp table with all drug exposures (dus_analysis_create_temp_drug_exposures.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.429 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Creating dus_h2_drug_exposures table (dus_analysis_create_perm_drug_exposure.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0658 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Creating dus_h2_cohort table (dus_analysis_create_perm_cohort.sql)
+2022-03-04 15:38:25	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0957 secs 
+2022-03-04 15:38:25	[Main thread]	INFO			  - Computing incidence and prevalence (dus_analysis_compute_prev_inc.sql)
+2022-03-04 15:38:28	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 2.32 secs 
+2022-03-04 15:38:28	[Main thread]	INFO			  - Computing observation period histogram data (dus_analysis_observation_per_month.sql)
+2022-03-04 15:38:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 3.84 secs 
+2022-03-04 15:38:32	[Main thread]	INFO			  - Drop analysis temp tables (dus_analysis_temp_table_drop_analysis.sql)
+2022-03-04 15:38:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0209 secs 
+2022-03-04 15:38:32	[Main thread]	INFO			  - Drop global temp tables (dus_analysis_temp_table_drop_global.sql)
+2022-03-04 15:38:32	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.013 secs 
+2022-03-04 15:38:32	[Main thread]	INFO			Creating Patient-Level data took 7.86 secs
+2022-03-04 15:52:25	[Main thread]	INFO	DrugUtilization	createCohorts	Counting cohorts
+2022-03-04 15:52:25	[Main thread]	INFO			Creating Patient-Level data in database
+2022-03-04 15:52:26	[Main thread]	INFO			  - Create global temp tables (dus_analysis_temp_table_create_global.sql)
+2022-03-04 15:52:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.248 secs 
+2022-03-04 15:52:26	[Main thread]	INFO			  - Creating calendary year temp table off observation_period (GetCalendarYearRange.sql)
+2022-03-04 15:52:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.00997 secs 
+2022-03-04 15:52:26	[Main thread]	INFO			  - Creating the temporary cohort table (dus_analysis_create_temp_cohort.sql)
+2022-03-04 15:52:26	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.344 secs 
+2022-03-04 15:52:26	[Main thread]	INFO			  - Creating temp table with all drug exposures (dus_analysis_create_temp_drug_exposures.sql)
+2022-03-04 15:52:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.489 secs 
+2022-03-04 15:52:27	[Main thread]	INFO			  - Creating dus_h2_drug_exposures table (dus_analysis_create_perm_drug_exposure.sql)
+2022-03-04 15:52:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.223 secs 
+2022-03-04 15:52:27	[Main thread]	INFO			  - Creating dus_h2_cohort table (dus_analysis_create_perm_cohort.sql)
+2022-03-04 15:52:27	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.275 secs 
+2022-03-04 15:52:27	[Main thread]	INFO			  - Computing incidence and prevalence (dus_analysis_compute_prev_inc.sql)
+2022-03-04 15:52:30	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 2.34 secs 
+2022-03-04 15:52:30	[Main thread]	INFO			  - Computing observation period histogram data (dus_analysis_observation_per_month.sql)
+2022-03-04 15:52:34	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 3.82 secs 
+2022-03-04 15:52:34	[Main thread]	INFO			  - Drop analysis temp tables (dus_analysis_temp_table_drop_analysis.sql)
+2022-03-04 15:52:34	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.0239 secs 
+2022-03-04 15:52:34	[Main thread]	INFO			  - Drop global temp tables (dus_analysis_temp_table_drop_global.sql)
+2022-03-04 15:52:34	[Main thread]	INFO	DatabaseConnector	executeSql	Executing SQL took 0.013 secs 
+2022-03-04 15:52:34	[Main thread]	INFO			Creating Patient-Level data took 8.65 secs
+2022-03-04 15:53:19	[Main thread]	FATAL	DatabaseConnector	.createErrorReport	Error executing SQL: near "from": syntax error An error report has been created at  D:/Users/mderidder/Documents/R packages/RanitidineStudyGitHub/errorReportSql.txt

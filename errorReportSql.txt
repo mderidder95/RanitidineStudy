@@ -2,11 +2,10 @@ DBMS:
 sqlite
 
 Error:
-near "from": syntax error
+no such column: p.gender_concept_id
 
 SQL:
-select person_id, DRUG_CONCEPT_ID, drug_name, DRUG_EXPOSURE_START_DATE, DRUG_EXPOSURE_END_DATE, DURATION, QUANTITY,
-         from dus_h2_drug_exposure Where DRUG_CONCEPT_ID = 19059056 and person_id < 10;
+select p.gender_concept_id, count(*) from person group by gender_concept_id;
 
 R version:
 R version 4.0.4 (2021-02-15)

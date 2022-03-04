@@ -58,7 +58,13 @@ CREATE TABLE @cohort_database_schema.dus_h2_cohort (
 	age INT NOT NULL,
 	formulation VARCHAR(500) NOT NULL,
   ingredient	INT NOT NULL,
-  historyGast	INT NOT NULL,
+  indication_180_gerd	INT NOT NULL,
+  indication_180_ulcer	INT NOT NULL,
+  indication_180_zes	INT NOT NULL,
+  indication_365_gerd	INT NOT NULL,
+  indication_365_ulcer	INT NOT NULL,
+  indication_365_zes	INT NOT NULL,
+  indication_365_ri	INT NOT NULL,
   total_exposures INT NOT NULL,
   total_exposures_with_strength INT NOT NULL,
   cumulative_duration INT NOT NULL,
@@ -78,7 +84,13 @@ INSERT INTO @cohort_database_schema.dus_h2_cohort (
 	age,
 	formulation,
   ingredient,
-  historyGast,
+  indication_180_gerd,
+  indication_180_zes,
+  indication_180_ulcer,
+  indication_365_gerd,
+  indication_365_zes,
+  indication_365_ulcer,
+  indication_365_ri,
   total_exposures,
   total_exposures_with_strength,
   cumulative_duration,
@@ -100,7 +112,43 @@ select
 	CASE 
 		WHEN
 			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 10 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -180 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1 
+		THEN 1
+		ELSE 0
+	END indication_180_gerd,
+	CASE 
+		WHEN
+			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 11 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -180 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1 
+		THEN 1
+		ELSE 0
+	END indication_180_zes,
+	CASE 
+		WHEN
+			SUM(CASE 
 				WHEN COALESCE(ind.cohort_definition_id, 0) = 12 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -180 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1 
+		THEN 1
+		ELSE 0
+	END indication_180_ulcer,
+	CASE 
+		WHEN
+			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 10 
 				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -365 
 				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
 				THEN 1
@@ -108,7 +156,43 @@ select
 			END) >= 1 
 		THEN 1
 		ELSE 0
-	END historyGast,
+	END indication_365_gerd,
+	CASE 
+		WHEN
+			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 11 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -365
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1 
+		THEN 1
+		ELSE 0
+	END indication_365_zes,
+	CASE 
+		WHEN
+			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 12 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -365 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1  
+		THEN 1
+		ELSE 0
+	END indication_365_ulcer,
+	CASE 
+		WHEN
+			SUM(CASE 
+				WHEN COALESCE(ind.cohort_definition_id, 0) = 13 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -365 
+				 AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+				THEN 1
+				ELSE 0
+			END) >= 1 
+		THEN 1
+		ELSE 0
+	END indication_365_ri,
 	te.total_exposures,
 	ISNULL(tews.total_exposures_with_strength, 0),
 	te.cumulative_duration,

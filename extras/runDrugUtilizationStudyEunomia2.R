@@ -19,10 +19,10 @@ Eunomia::createCohorts(connectionDetails = connectionDetails,cdmDatabaseSchema =
 # Celecoxib 1844 Diclofenac 850 GiBleed 479 NSAIDs 2694
 
 # Acetaminophen
-querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date from drug_exposure Where drug_concept_id = 1127078;")
+# querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date from drug_exposure Where drug_concept_id = 1127078;")
 # Asperin
-querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date 
-         from drug_exposure Where drug_concept_id = 19059056;")
+# querySql(conn,"select drug_concept_id, drug_exposure_start_date, drug_exposure_end_date 
+#         from drug_exposure Where drug_concept_id = 19059056;")
 
                
 
@@ -187,30 +187,113 @@ querySql(conn,"select * from dus_h2_temp_cohort Where subject_id > 10;") # 2630
 
 querySql(conn,"select * from drug_exposure Where person_id < 4;")
 
+executeSql(conn, "drop table test_cohort;")
 
-dusAnalysis(connection = conn,
-            connectionDetails = connectionDetails,
-            cdmDatabaseSchema = "main",
-            cohortDatabaseSchema = "main",
-            cohortTable = cohortTable,
-            oracleTempSchema = oracleTempSchema,
-            debug = debug,
-            outputFolder = outputFolder,
-            debugSqlFile = debugSqlFile, 
-            databaseId = databaseId,
-            databaseName = databaseName,
-            addIndex = addIndex,
-            selfManageTempTables = TRUE,
-            vocabularyDatabaseSchema= "main",
-            cdmDrugExposureSchema= "main",
-            drugExposureTable = "drug_exposure",
-            cdmObservationPeriodSchema= "main",
-            observationPeriodTable = "observation_period",
-            cdmPersonSchema= "main",
-            personTable = "person")
+executeSql(conn, "create table test_cohort as
+              select c.subject_id, person_id, c.cohort_start_date, c.drug_exposure_id, p.gender_concept_id,
+                    c.formulation, c.cohort_definition_id
+            from main.dus_h2_temp_cohort  c
+            inner join main.person        p   on c.subject_id = p.person_id;")
 
-#no such table: temp.UNIT_CONCEPTS
-# And no tables created.
+querySql(conn,"select count(*) from test_cohort;") # 5985
+
+executeSql(conn, "drop table test_cohort;")
+executeSql(conn, "create table test_cohort as
+              select c.subject_id, person_id, c.cohort_start_date, c.drug_exposure_id, cg.concept_name as gender,
+                    c.formulation, c.cohort_definition_id
+            from main.dus_h2_temp_cohort  c
+            inner join main.person        p   on c.subject_id = p.person_id
+            inner join main.concept       cg  on cg.concept_id = p.gender_concept_id;")
+querySql(conn,"select count(*) from test_cohort;") # 0
+
+querySql(conn,"select gender_concept_id, count(*) from person group by gender_concept_id;") 
+
+querySql(conn,"select * from concept where concept_id = 8507;") 
+querySql(conn,"select * from concept where concept_id = 8532;") 
+# These concept ids are not in this concept table.
+
+### Bezig in DB Browser
+
+
+executeSql(conn, "select c.subject_id, person_id, c.cohort_start_date, c.drug_exposure_id, p.gender_concept_id,
+                    (YEAR(c.cohort_start_date) - p.year_of_birth) age, c.formulation, c.cohort_definition_id, ingredient,
+                      CASE 
+                      WHEN
+                      SUM(CASE 
+                          WHEN COALESCE(ind.cohort_definition_id, 0) = 12 
+                          AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) >= -365 
+                          AND DATEDIFF(dd, c.cohort_start_date, ind.cohort_start_date) <= 0
+                          THEN 1
+                          ELSE 0
+                          END) >= 1 
+                      THEN 1
+                      ELSE 0
+                      END historyGast,
+                      te.total_exposures,
+                      ISNULL(tews.total_exposures_with_strength, 0),
+                      te.cumulative_duration,
+                      de.pdd,
+                      CASE 
+                      WHEN de.pdd IS NOT NULL AND de.ddd <> 0 THEN de.pdd / de.ddd
+                      ELSE 0
+                      END pdd_ratio,
+                      te.cumulative_dose,
+                      te.cumulative_DDD,
+                      CASE 
+                      WHEN DATEDIFF(dd, op.observation_period_start_date, op.observation_period_end_date) <> 0
+                      THEN te.cumulative_dose / (DATEDIFF(dd, op.observation_period_start_date, op.observation_period_end_date) / 365.25)
+                      ELSE 0
+                      END cumulative_annual_dose,
+                      DATEDIFF(dd, op.observation_period_start_date, op.observation_period_end_date) observation_period_days
+            from main.dus_h2_temp_cohort  c
+            inner join main.person        p   on c.subject_id = p.person_id
+            inner join main.concept       cg  on cg.concept_id = p.gender_concept_id
+            left join (
+                SELECT *   FROM main.mr_spec
+                WHERE cohort_definition_id >= 10 AND cohort_definition_id <= 13) ind
+                  on ind.subject_id = c.subject_id and ind.cohort_start_date <= c.cohort_start_date
+              INNER JOIN main.observation_period     op
+              ON c.subject_id = op.person_id AND c.cohort_start_date >= op.observation_period_start_date AND c.cohort_start_date <= op.observation_period_end_date
+              INNER JOIN main.dus_h2_drug_exposure  de
+              ON de.person_id = c.subject_id AND de.drug_exposure_id = c.drug_exposure_id
+              INNER JOIN (
+                  SELECT ingredient, person_id, dose_form_group_concept_id, COUNT(DISTINCT drug_exposure_id) total_exposures,
+                          SUM(duration) cumulative_duration, SUM(full_dose) cumulative_dose, SUM(cumulative_num_ddd) cumulative_DDD
+                FROM main.dus_h2_drug_exposure
+                GROUP BY ingredient, person_id, dose_form_group_concept_id) te 
+                ON te.ingredient = c.cohort_definition_id AND te.person_id = c.subject_id AND te.dose_form_group_concept_id = c.dose_form_group_concept_id
+              LEFT JOIN (
+                SELECT ingredient, person_id, dose_form_group_concept_id, COUNT(DISTINCT drug_exposure_id) total_exposures_with_strength
+                FROM @cohort_database_schema.dus_h2_drug_exposure
+                WHERE quantity > -1 AND (amount_unit_concept_id > -1 OR numerator_unit_concept_id > -1)
+                GROUP BY ingredient, person_id, dose_form_group_concept_id
+              ) tews ON 
+              tews.ingredient = c.cohort_definition_id 
+              AND tews.person_id = c.subject_id
+              AND tews.dose_form_group_concept_id = c.dose_form_group_concept_id
+              GROUP BY
+              c.subject_id, 
+              c.cohort_start_date,
+              c.drug_exposure_id,
+              cg.concept_name,
+              c.cohort_start_date,
+              p.year_of_birth,
+              c.formulation,
+              c.cohort_definition_id,
+              te.total_exposures,
+              tews.total_exposures_with_strength,
+              te.cumulative_duration,
+              de.pdd,
+              de.ddd,
+              te.cumulative_dose,
+              te.cumulative_ddd,
+              op.observation_period_start_date, 
+              op.observation_period_end_date
+              ;
+
+
+
+
 
 
 

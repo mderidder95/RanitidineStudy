@@ -176,8 +176,11 @@ querySql(conn,"select count(*) from dus_h2_cohort;") # 0
 querySql(conn,"select count(*) from dus_h2_temp_cohort;") # 5985
 
 querySql(conn,"select count(*) from dus_h2_denominator;") # 0
+querySql(conn,"select count(*) from dus_h2_numerator;") # 0
 querySql(conn,"select count(*) from dus_h2_drug_exposure;") # 18336
 querySql(conn,"select ingredient, count(*) from dus_h2_drug_exposure group by ingredient;") # 18336
+querySql(conn,"select count(*) from dus_h2_obs_per_month;") # 1077
+
 querySql(conn,"select * from dus_h2_drug_exposure Where person_id > 10;") 
 
 querySql(conn,"select person_id, DRUG_CONCEPT_ID, drug_name, DRUG_EXPOSURE_START_DATE, DRUG_EXPOSURE_END_DATE, DURATION, QUANTITY

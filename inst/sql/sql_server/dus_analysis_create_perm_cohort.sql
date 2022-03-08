@@ -90,10 +90,10 @@ INSERT INTO @cohort_database_schema.dus_h2_cohort (
   observation_period_days
 )
 select
-	c.subject_id person_id, 
+	c.subject_id p.person_id, 
 	c.cohort_start_date,
 	c.drug_exposure_id,
-	cg.concept_name gender,
+	p.gender_concept_id,
 	(YEAR(c.cohort_start_date) - p.year_of_birth) age,
 	c.formulation,
 	c.cohort_definition_id ingredient,
@@ -127,7 +127,6 @@ select
 	DATEDIFF(dd, op.observation_period_start_date, op.observation_period_end_date) observation_period_days
 from @cohort_database_schema.dus_h2_temp_cohort c
 inner join @cdm_person_schema.@person_table p ON c.subject_id = p.person_id
-inner join @vocabulary_database_schema.concept cg ON cg.concept_id = p.gender_concept_id
 left join (
 	SELECT *
 	FROM @cohort_database_schema.@cohort_table

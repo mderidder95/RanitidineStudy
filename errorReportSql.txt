@@ -2,10 +2,11 @@ DBMS:
 sqlite
 
 Error:
-no such column: p.gender_concept_id
+no such table: calendarYears
 
 SQL:
-select p.gender_concept_id, count(*) from person group by gender_concept_id;
+create Table calendar_year as
+          select *  FROM calendarYears
 
 R version:
 R version 4.0.4 (2021-02-15)
